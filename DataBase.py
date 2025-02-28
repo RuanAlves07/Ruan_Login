@@ -7,19 +7,19 @@ class Database:
             host = "localhost",
             user = "root",
             password = "",
-            database = "RuanDatabase_db"
+            database = "ruandatabase_db"
         )
         self.cursor = self.conn.cursor() # Cria um cursor para executar comandos SQL
         
-        # CRIA A TABELA "USUARIO1" SE ELA NÃO EXISTIR
+        # CRIA A TABELA "USUARIO" SE ELA NÃO EXISTIR
 
-        self.cursor.execute("""CREATE TABLE IF NOT EXISTS USUARIO(
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS usuario(
                 idUsuario INT AUTO_INCREMENT PRIMARY KEY,
                 nome TEXT(255),
                 email TEXT(255),
                 usuario TEXT (255),
-                senha TEXT(255),            
-                );""")
+                senha TEXT(255)        
+                );''')
         self.conn.commit() # Confirma a criação da tabela
 
         print("Conectado ao banco de Dados!") # Imprime uma mensagem de confirmação

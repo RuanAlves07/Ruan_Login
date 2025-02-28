@@ -19,16 +19,14 @@ jan.attributes("-alpha", 0.9) # Define a transparencia da janela (0.0 a 1.0)
 
 # CARREGAR IMAGEM 
 
-# logo = PhotoImage(file = "icons/LogoSergio.png") # Carrega a imagem do logo
+# logo = PhotoImage(file = "C:/Users/ruan_a_alves/Documents/Icones/RA_Certo") # Carrega a imagem do logo
 
 # CRIAR FRAME
 
 LeftFrame = Frame(jan,width = 200, height = 300, bg = "MIDNIGHTBLUE", relief = "raise") # Cria um frame à esquerda
-
 LeftFrame.pack(side = LEFT) # Posiciona o frame à esquerda
 
 RightFrame = Frame(jan, width = 395, height = 300, bg = "MIDNIGHTBLUE", relief = "raise") # Cria um frame à direita
-
 RightFrame.pack(side = RIGHT) # Posiciona o frame à direita
 
 # ADICIONAR LOGO
@@ -69,6 +67,7 @@ def Login():
         messagebox.showinfo(title = "INFO LOGIN", message = "Acesso negado. Verifique se está cadastrado no Sistema!") #Exibe mensagem de erro.
 
 # CRIANDO BOTÕES
+
 LoginButton = ttk.Button(RightFrame, text = "LOGIN", width = 15, command = Login) # Cria um botão de login
 LoginButton.place(x = 150, y = 225) # Posiciona o botão de login
 
@@ -76,7 +75,7 @@ LoginButton.place(x = 150, y = 225) # Posiciona o botão de login
 def Registrar():
     # REMOVENDO BOTÕES DE LOGIN
     LoginButton.place(x = 5000) # Move o botão de login para fora da tela
-    RegisterButton.place(x = 5000) # Move o botão de registro para fora da tela
+    RegisterButton.place (x = 5000) # Move o botão de registro para fora da tela
 
     # INSRINDO WIDGETS DE CADASTRO
     NomeLabel = Label(RightFrame, text = "Nome: ", font= ("Century Gothic", 20), bg = "MIDNIGHTBLUE", fg = "White") # Cria um label para o nome
