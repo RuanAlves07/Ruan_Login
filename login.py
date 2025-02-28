@@ -82,6 +82,9 @@ def Registrar():
     NomeLabel = Label(RightFrame, text = "Nome: ", font= ("Century Gothic", 20), bg = "MIDNIGHTBLUE", fg = "White") # Cria um label para o nome
     NomeLabel.place(x = 5, y = 5) # Posiciona o campo de entrada
 
+    NomeEntry = ttk.Entry(RightFrame, width = 30) # Cria um campo de entrada para o nome
+    NomeEntry.place(x = 120, y = 20) # Posiciona o campo de entrada
+
     EmailLabel = Label(RightFrame, text = "Email: ", font = ("Century Gothic", 20), bg = "MIDNIGHTBLUE", fg = "White") # Cria um label para o e-mail
     EmailLabel.place(x = 5, y = 40) # Posiciona o label no frame direito
 
