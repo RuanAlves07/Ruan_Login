@@ -134,5 +134,5 @@ def Registrar():
     RegisterButton = ttk.Button(RightFrame, text = "REGISTRAR", width = 15, command = Registrar) # Cria um botão de registro
     RegisterButton.place (x = 150, y = 255) # Posiciona o botão de registro
 
-    # INICIAR O LOOP PRINCIPAL
-    jan.mainloop() # Inicia o loop principal da aplicação
+# INICIAR O LOOP PRINCIPAL
+jan.mainloop() # Inicia o loop principal da aplicação

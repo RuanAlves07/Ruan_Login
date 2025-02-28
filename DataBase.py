@@ -13,7 +13,7 @@ class Database:
         
         # CRIA A TABELA "USUARIO" SE ELA NÃO EXISTIR
 
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS usuario(
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS usuario (
                 idUsuario INT AUTO_INCREMENT PRIMARY KEY,
                 nome TEXT(255),
                 email TEXT(255),
