@@ -4,7 +4,7 @@ from tkinter import ttk
 from DataBase import Database
 
 jan = Tk() # Cria uma instância da janela principal
-jan.title("RA Sytens - Painel de acesso") #Define o título da janela
+jan.title("RA System - Painel de acesso") #Define o título da janela
 jan.geometry("600x300") # Define o tamanho da janela
 jan.configure(background = "white") # Configura a cor de fundo da janela
 jan.resizable(width = False, height = False) # Impede que a janela seja redimensionada
@@ -101,3 +101,39 @@ def Registrar():
         # Verifica se todos os campos estão preenchidos
         if nome == "" or email == "" or usuario == "" or senha == "":
             messagebox.showerror(title = "Erro de Registro", message = "PREENCHA TODOS OS CAMPOS") # Exibe mensagem de erro
+        else:
+            db = Database() #Cria uma instância da classe Database
+            db.RegistrarNoBanco(nome, email, usuario, senha) # Chama o método para registrar no banco de dados
+            messagebox.showinfo("Sucesso","Usuário registrado com sucesso!") # Exibe mensagem de sucesso
+
+            # LIMPAR OS CAMPOS APÓS O REGISTRO
+            NomeEntry.delete(0, END) # Limpa o campo de entrada do nome
+            EmailEntry.delete(0, END) # Limpa o campo de entrada do e-mail
+            UsuarioEntry.delete(0, END) #Limpa o campo de entrada do usuario
+            SenhaEntry.delete(0, END) #Limpa o campo de entrada da senha
+
+    Register = ttk.Button(RightFrame, text = "REGISTRAR", width = 15, command = RegistrarNoBanco) # Cria um botão de registro
+    Register.place (x = 150, y = 225) # Posiciona o botão de registro
+
+    # FUNÇÃO PARA VOLTAR À TELA DE LOGIN
+
+    def VoltarLogin():
+        # REMOVENDO WIDGETS DE CADASTRO
+        NomeLabel.place(x = 5000) # Move o label do nome para fora da tela
+        NomeEntry.place(x = 5000) # Move o campo de entrada do nome para fora da tela
+        EmailLabel.place(x = 5000) # Move o label do email para fora da tela
+        EmailEntry.place(x = 5000) # Move o botão de registro para fora da tela
+        Register.place (x = 5000) # Move o botão de registro para fora da tela
+        Voltar.place (x = 5000) # Move o botão de voltar para fora da tela
+
+        # TRAZENDO DE VOLTA OS WIDGETS
+        LoginButton.place (x = 150) # Traz o botão de login de volta para a tela
+        RegisterButton.place(x = 150) # Traz o botão de registro de volta para a tela
+    Voltar = ttk.Button(RightFrame, text = "VOLTAR", width = 15, command = VoltarLogin) # Cria um botão de voltar
+    Voltar.place(x = 150, y = 255) # Posiciona o botão de voltar
+
+    RegisterButton = ttk.Button(RightFrame, text = "REGISTRAR", width = 15, command = Registrar) # Cria um botão de registro
+    RegisterButton.place (x = 150, y = 255) # Posiciona o botão de registro
+
+    # INICIAR O LOOP PRINCIPAL
+    jan.mainloop() # Inicia o loop principal da aplicação
