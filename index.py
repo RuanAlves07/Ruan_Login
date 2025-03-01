@@ -19,7 +19,7 @@ jan.attributes("-alpha", 0.9) # Define a transparencia da janela (0.0 a 1.0)
 
 # CARREGAR IMAGEM 
 
-# logo = PhotoImage(file = "C:/Users/ruan_a_alves/Documents/Icones/RA_Certo") # Carrega a imagem do logo
+logo = PhotoImage(file = "icon/RA.png") # Carrega a imagem do logo
 
 # CRIAR FRAME
 
@@ -31,9 +31,9 @@ RightFrame.pack(side = RIGHT) # Posiciona o frame à direita
 
 # ADICIONAR LOGO
 
-# LogoLabel = Label(LeftFrame, image = logo, bg = "MIDNIGHTBLUE" ) # Cria um label para a imagem do logo
+LogoLabel = Label(LeftFrame, image = logo, bg = "MIDNIGHTBLUE" ) # Cria um label para a imagem do logo
 
-# LogoLabel.place(x = 50, y = 100) # Posiciona o label no frame esquerdo
+LogoLabel.place(x = 50, y = 100) # Posiciona o label no frame esquerdo
 
 # ADICIONAR CAMPOS DE USUÁRIO E SENHA
 
@@ -131,8 +131,8 @@ def Registrar():
     Voltar = ttk.Button(RightFrame, text = "VOLTAR", width = 15, command = VoltarLogin) # Cria um botão de voltar
     Voltar.place(x = 150, y = 255) # Posiciona o botão de voltar
 
-    RegisterButton = ttk.Button(RightFrame, text = "REGISTRAR", width = 15, command = Registrar) # Cria um botão de registro
-    RegisterButton.place (x = 150, y = 255) # Posiciona o botão de registro
+RegisterButton = ttk.Button(RightFrame, text = "REGISTRAR", width = 15, command = Registrar) # Cria um botão de registro
+RegisterButton.place (x = 150, y = 255) # Posiciona o botão de registro
 
 # INICIAR O LOOP PRINCIPAL
 jan.mainloop() # Inicia o loop principal da aplicação
